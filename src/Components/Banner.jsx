@@ -18,7 +18,7 @@ import { EffectFade, EffectCube, Navigation, Pagination } from 'swiper/modules';
 
 const Banner = () => {
     return (
-        <div className='bg-'>
+        <div className=''>
             <Swiper
                 effect={'cube'}
                 grabCursor={true}
@@ -34,7 +34,7 @@ const Banner = () => {
             >
                 <SwiperSlide>
                     <div className=''>
-                        <div className='w-11/12 mx-auto flex flex-col gap-5  md:flex-row md:py-20 py-10'>
+                        <div className='w-11/12 mx-auto flex flex-col gap-5  md:flex-row md:py-16 py-9'>
                             <div
                                 className='flex-1 md:pl-6 space-y-3 animate__animated animate__fadeInLeft'>
                                 <h1 className='  md:text-5xl lg:text-6xl text-4xl font-bold lg:w-4/5 md:w-full  text-cyan-600'>
@@ -42,13 +42,13 @@ const Banner = () => {
                                 <p className='lg:w-2/3 '>Guiding you toward a fulfilling career with personalized advice,
                                     expert insights, and proven strategies for success.</p>
                             </div>
-                            <div className='md:h-80 w-full md:w-[50%] lg:w-[40%]'><img className='rounded-md object-cover w-full md:w-full h-full lg:w-full' src={slide1} alt="" /></div>
+                            <div className='md:h-80 w-full md:w-[50%] lg:w-[40%] md:pr-6'><img className='rounded-md object-cover w-full md:w-full h-full lg:w-full' src={slide1} alt="" /></div>
                         </div>
                     </div>
                 </SwiperSlide>
                 <SwiperSlide>
                     <div className=''>
-                        <div className='w-11/12 mx-auto flex flex-col gap-5  md:flex-row md:py-20 py-10'>
+                        <div className='w-11/12 mx-auto flex flex-col gap-5  md:flex-row md:py-16 py-9'>
                             <div
                                 className='flex-1 md:pl-6 space-y-3 animate__animated animate__fadeInLeft'>
                                 <h1 className='md:text-5xl  lg:text-6xl text-4xl font-bold lg:w-4/5 md:w-full  text-cyan-600'>
@@ -56,13 +56,13 @@ const Banner = () => {
                                 <p className='lg:w-2/3'>Discover your potential, explore opportunities,
                                  and achieve career success with expert guidance and personalized support.</p>
                             </div>
-                            <div className='md:h-80 md:w-[50%] w-full lg:w-[40%]'><img className='rounded-md w-full object-cover  md:w-full h-full lg:w-full' src={slide2} alt="" /></div>
+                            <div className='md:h-80 md:w-[50%] w-full lg:w-[40%] md:pr-6'><img className='rounded-md w-full object-cover  md:w-full h-full lg:w-full' src={slide2} alt="" /></div>
                         </div>
                     </div>
                 </SwiperSlide>
                 <SwiperSlide>
                     <div className=''>
-                        <div className='w-11/12 mx-auto flex flex-col gap-5  md:flex-row md:py-20 py-10'>
+                        <div className='w-11/12 mx-auto flex flex-col gap-5  md:flex-row md:py-16 py-9'>
                             <div
                                 className='flex-1 md:pl-6 space-y-3 animate__animated animate__fadeInLeft'>
                                 <h1 className='md:text-5xl   lg:text-6xl text-4xl font-bold lg:w-4/5 md:w-full  text-cyan-600'>
@@ -70,7 +70,7 @@ const Banner = () => {
                                 <p className='lg:w-2/3'>Unlock your career potential with
                                  expert advice, personalized guidance, and proven strategies for success</p>
                             </div>
-                            <div className='md:h-80 md:w-[50%] w-full lg:w-[40%]'><img className='w-full rounded-md object-cover md:w-full h-full lg:w-full' src={slide3} alt="" /></div>
+                            <div className='md:h-80 md:w-[50%] w-full lg:w-[40%] md:pr-6'><img className='w-full rounded-md object-cover md:w-full h-full lg:w-full' src={slide3} alt="" /></div>
                         </div>
                     </div>
                 </SwiperSlide>

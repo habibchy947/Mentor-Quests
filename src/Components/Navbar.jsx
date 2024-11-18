@@ -8,7 +8,7 @@ const Navbar = () => {
             <NavLink to='/about' className={({isActive})=>` px-4 py-2 font-medium ${isActive? 'text-orange-400':'text-black'}`}>About us</NavLink>
         </>
     return (
-        <div className="navbar px-0  w-11/12 mx-auto py-4">
+        <div className="navbar px-0  w-11/12 mx-auto py-3">
             <div className="navbar-start">
                 <div className="dropdown">
                     <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -31,7 +31,7 @@ const Navbar = () => {
                             {links}
                     </ul>
                 </div>
-                <NavLink to='/' className=" text-3xl font-bold"><span className='text-orange-400'>Mentor</span><span className='text-cyan-600'> Quest</span></NavLink>
+                <NavLink to='/' className=" md:text-3xl text-xl font-bold"><span className='text-orange-400'>Mentor</span><span className='text-cyan-600'> Quest</span></NavLink>
             </div>
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal px-1">

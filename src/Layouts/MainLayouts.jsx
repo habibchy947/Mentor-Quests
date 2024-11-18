@@ -7,7 +7,7 @@ const MainLayouts = () => {
     return (
         <div className='font-poppins bg-white max-w-[1370px] mx-auto'>
             {/* navbar */}
-            <section className=' bg-gray-200 sticky top-0 z-0  bg-opacity-90 backdrop:blur-xl'>
+            <section className=' bg-gray-200 sticky top-0 z-30  bg-opacity-90 backdrop:blur-xl'>
                 <Navbar></Navbar>
             </section>
             {/* dynamic section */}

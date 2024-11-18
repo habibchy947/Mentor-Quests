@@ -9,7 +9,7 @@ const Footer = () => {
         <div>
             <footer className=" gap-4 footer md:flex-row text-base-content py-10 w-11/12 mx-auto">
                 <aside>
-                    <NavLink to='/' className=" text-5xl font-bold"><span className='text-orange-400'>Mentor</span><span className='text-cyan-600'> Quest</span></NavLink>
+                    <NavLink to='/' className=" md:text-5xl text-4xl font-bold"><span className='text-orange-400'>Mentor</span><span className='text-cyan-600'> Quest</span></NavLink>
                     <p className=''>
                         Empowering growth throw meaningful<br />collections.Join a thriving community<br />where mentors and mentees collaborate<br /> to unlock potential.
                     </p>
@@ -17,7 +17,7 @@ const Footer = () => {
                         <input
                             type="text"
                             placeholder="username@gmail.com"
-                            className="input  join-item" />
+                            className="input w-2/4 md:w-full join-item" />
                         <button className="btn bg-cyan-600 text-white join-item">Subscribe</button>
                     </div>
                     <div className='flex gap-3'>
