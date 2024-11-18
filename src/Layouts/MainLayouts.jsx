@@ -5,17 +5,17 @@ import Footer from '../Components/Footer';
 
 const MainLayouts = () => {
     return (
-        <div className='font-poppins bg-white'>
+        <div className='font-poppins bg-white max-w-[1370px] mx-auto'>
             {/* navbar */}
             <section className=' bg-gray-200 sticky top-0'>
                 <Navbar></Navbar>
             </section>
             {/* dynamic section */}
-            <section className='min-h-screen'>
+            <section className='bg-gray-50'>
                 <Outlet></Outlet>
             </section>
             {/* footer */}
-            <section className='bg-slate-100'>
+            <section className='bg-gray-200'>
                 <Footer></Footer>
             </section>
         </div>
