@@ -3,8 +3,9 @@ import { NavLink } from 'react-router-dom';
 const Navbar = () => {
     const links =
         <>
-            <NavLink to='/' className={({isActive})=> ` px-4 py-2 font-semibold ${isActive? 'text-lime-400':''}`}>Home</NavLink>
-            <NavLink to='/profile' className={({isActive})=>` px-4 py-2 font-semibold ${isActive? 'text-lime-400':''}`}>My profile</NavLink>
+            <NavLink to='/' className={({isActive})=> ` px-4 py-2 font-medium ${isActive? 'text-orange-400':'text-black'}`}>Home</NavLink>
+            <NavLink to='/profile' className={({isActive})=>` px-4 py-2 font-medium ${isActive? 'text-orange-400':'text-black'}`}>My profile</NavLink>
+            <NavLink to='/about' className={({isActive})=>` px-4 py-2 font-medium ${isActive? 'text-orange-400':'text-black'}`}>About us</NavLink>
         </>
     return (
         <div className="navbar px-0  w-11/12 mx-auto py-4">
@@ -30,7 +31,7 @@ const Navbar = () => {
                             {links}
                     </ul>
                 </div>
-                <NavLink to='/' className=" text-3xl bg-clip-text inline-block text-transparent font-bold bg-gradient-to-r from-purple-600 via-green-500 to-indigo-400">Mentor Quest</NavLink>
+                <NavLink to='/' className=" text-3xl font-bold"><span className='text-orange-400'>Mentor</span><span className='text-cyan-600'> Quest</span></NavLink>
             </div>
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal px-1">
@@ -38,7 +39,7 @@ const Navbar = () => {
                 </ul>
             </div>
             <div className="navbar-end">
-                <a className="btn">Login</a>
+                <a className="btn bg-orange-400 text-white">Login</a>
             </div>
         </div>
     );
