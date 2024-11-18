@@ -12,8 +12,8 @@ const Review = ({singleReview}) => {
         </figure>
         <div className=" px-4 md:w-[60%]  py-5">
             <p><FaQuoteLeft></FaQuoteLeft></p>
-        <p>{review}</p>
-          <h2 className="card-title text-cyan-600">{name}</h2>
+        <p className='md:mt-3'>{review}</p>
+          <h2 className="card-title text-cyan-600 md:mt-2">{name}</h2>
           <p>Client</p>
         </div>
       </div>

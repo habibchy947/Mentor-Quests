@@ -32,11 +32,8 @@ useEffect(()=>{
             centeredSlides={true}
             slidesPerView={2}
             autoplay={{
-                delay: 3000,
+                delay: 2000,
                 disableOnInteraction: false,
-            }}
-            pagination={{
-                clickable: true,
             }}
             navigation={true}
             modules={[Autoplay, Pagination, Navigation]}

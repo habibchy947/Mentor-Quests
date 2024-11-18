@@ -9,6 +9,12 @@ export default {
       fontFamily: {
         poppins: ['Poppins', 'serif',]
       },
+      backgroundImage: {
+        mentor: "url('/src/assets/mentoring.jpeg')",
+        consultation: "url('/src/assets/consultation.jpeg')",
+        explore: "url('/src/assets/explore.avif')",
+        realization: "url('/src/assets/realization.jpg')"
+      }
     },
   },
   plugins: [
