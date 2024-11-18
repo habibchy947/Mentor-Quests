@@ -4,6 +4,7 @@ import './index.css'
 import { RouterProvider } from 'react-router-dom'
 import router from './Routes/router.jsx'
 import 'react-awesome-button/dist/styles.css';
+import 'animate.css';
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <RouterProvider router={router}></RouterProvider>
