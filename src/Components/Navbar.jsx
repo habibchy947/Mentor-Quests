@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { NavLink } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 const Navbar = () => {
     const links =
         <>
@@ -41,7 +41,7 @@ const Navbar = () => {
                 </ul>
             </div>
             <div className="navbar-end">
-                <a className="btn bg-orange-400 text-white">Login</a>
+                <Link to='/authLayout/login' className="btn bg-orange-400 text-white">Login</Link>
             </div>
         </div>
     );

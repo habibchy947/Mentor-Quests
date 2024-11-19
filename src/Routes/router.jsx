@@ -3,6 +3,8 @@ import MainLayouts from "../Layouts/MainLayouts";
 import ErrorPage from "../Pages/ErrorPage";
 import Home from "../Pages/Home";
 import ServiceDetail from "../Pages/ServiceDetail";
+import AuthLayout from "../Layouts/AuthLayout";
+import Login from "../Components/Login";
 
 const router = createBrowserRouter([
     {
@@ -27,7 +29,22 @@ const router = createBrowserRouter([
             {
                 path:'/about',
                 element: <h2>About</h2>
-            }
+            },
+            {
+                path:'/authLayout',
+                element:<AuthLayout></AuthLayout>,
+                children:[
+                    {
+                        path:'/authLayout/login',
+                        element: <Login></Login>
+                    },
+                    {
+                        path:'/authLayout/register',
+                        element: <h2>register</h2>
+                    },
+                ]
+            },
+            
         ]
     }
 ])
