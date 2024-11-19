@@ -1,14 +1,17 @@
-import React from 'react';
+import React, { useState } from 'react';
 import login from '../assets/mobile-password-forgot.png'
-import { FaGoogle } from "react-icons/fa";
+import { FaGoogle, FaRegEyeSlash } from 'react-icons/fa6';
 import { Link } from 'react-router-dom';
-const Login = () => {
+import { FaPhotoFilm } from "react-icons/fa6";
+import { FaRegEye } from "react-icons/fa6";
+const Register = () => {
+    const [eye,setEye] = useState(false)
     return (
         <div className='flex w-2/3 mx-auto'>
             <div className='w-2/5 flex md:flex-col flex-row justify-between bg-cyan-600 px-6 py-8 text-white'>
                 <div>
-                    <h2 className='text-2xl font-semibold mb-4'>Login</h2>
-                    <p>Stay in touch with us by log in with your personal information</p>
+                    <h2 className='text-2xl font-semibold mb-4'>Register</h2>
+                    <p>Provide your personal details to begin your journey with us</p>
                 </div>
                 <div className=' flex justify-center'>
                     <img className='h-36 ' src={login} alt="" />
@@ -18,9 +21,13 @@ const Login = () => {
                 <div className='flex justify-center'>
                     <button className='px-4 py-2 text-xl rounded-2xl border-2 flex items-center gap-2'>Login with<span className='text-cyan-600'>Google</span> <span className='text-cyan-600'><FaGoogle /></span></button>
                 </div>
-                <div className="divider py-4">or use your email account</div>
+                <div className="divider py-4">or create an account</div>
                 <div className=''>
                     <form className='space-y-4 py-3' action="">
+                        {/* name field */}
+                        <label className="input  input-bordered flex items-center gap-2">
+                            <input type="text" className="grow "  placeholder="Enter Your Name" />
+                        </label>
                         {/* email field */}
                         <label className="input  input-bordered flex items-center gap-2">
                             <svg
@@ -35,6 +42,11 @@ const Login = () => {
                             </svg>
                             <input type="email" className="grow " required placeholder="Enter Email" />
                         </label>
+                        {/* photoURL field */}
+                        <label className="input  input-bordered flex items-center gap-2">
+                            <span><FaPhotoFilm/></span>
+                            <input type="text" className="grow " required placeholder="Enter Photo URL" />
+                        </label>
                         {/* password field */}
                         <label className="input input-bordered flex items-center gap-2">
                             <svg
@@ -47,15 +59,19 @@ const Login = () => {
                                     d="M14 6a4 4 0 0 1-4.899 3.899l-1.955 1.955a.5.5 0 0 1-.353.146H5v1.5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1-.5-.5v-2.293a.5.5 0 0 1 .146-.353l3.955-3.955A4 4 0 1 1 14 6Zm-4-2a.75.75 0 0 0 0 1.5.5.5 0 0 1 .5.5.75.75 0 0 0 1.5 0 2 2 0 0 0-2-2Z"
                                     clipRule="evenodd" />
                             </svg>
-                            <input type="password" className="grow" required placeholder='Enter Password' />
+                            <input type={eye ? 'text' : 'password'} className="grow" required placeholder='Enter Password' />
+                            <span onClick={()=>setEye(!eye)}>
+                                {
+                                eye ? <FaRegEyeSlash/> : <FaRegEye/>
+                                }</span>
                         </label>
                         <button className='btn bg-cyan-600 w-full text-white'>Login</button>
                     </form>
-                    <p className='pt-3 text-center'>New to Mentor Quest ? please <Link to='/authLayout/register' className='text-cyan-600 font-semibold'>Register</Link></p>
+                    <p className='pt-3 text-center'>Already have an account ? please <Link to='/authLayout/login' className='text-cyan-600 font-semibold'>Login</Link></p>
                 </div>
             </div>
         </div>
     );
 };
 
-export default Login;
+export default Register;

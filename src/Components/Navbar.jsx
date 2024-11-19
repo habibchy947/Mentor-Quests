@@ -41,7 +41,7 @@ const Navbar = () => {
                 </ul>
             </div>
             <div className="navbar-end">
-                <Link to='/authLayout/login' className="btn bg-orange-400 text-white">Login</Link>
+                <Link to='/authLayout/login' className="btn px-5 border-none bg-orange-400 text-white">Login</Link>
             </div>
         </div>
     );

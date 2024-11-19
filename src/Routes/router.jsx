@@ -5,6 +5,7 @@ import Home from "../Pages/Home";
 import ServiceDetail from "../Pages/ServiceDetail";
 import AuthLayout from "../Layouts/AuthLayout";
 import Login from "../Components/Login";
+import Register from "../Components/Register";
 
 const router = createBrowserRouter([
     {
@@ -40,7 +41,7 @@ const router = createBrowserRouter([
                     },
                     {
                         path:'/authLayout/register',
-                        element: <h2>register</h2>
+                        element: <Register></Register>
                     },
                 ]
             },
