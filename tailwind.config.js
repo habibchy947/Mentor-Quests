@@ -10,6 +10,7 @@ export default {
         poppins: ['Poppins', 'serif',]
       },
       backgroundImage: {
+        serviceBanner: "url('/src/assets/slider=-1.avif')",
         mentor: "url('/src/assets/mentoring.jpeg')",
         consultation: "url('/src/assets/consultation.jpeg')",
         explore: "url('/src/assets/explore.avif')",

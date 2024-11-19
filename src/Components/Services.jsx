@@ -9,7 +9,7 @@ const Services = ({services}) => {
             <p>Joi session on career growth, skill building and professional development.Create actionable plans to achieve
                 your long-term career objectives</p>
         </div>
-        <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 md:gap-5 gap-6'>
+        <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 md:gap-7 gap-6'>
             {
                 services.map((service,idx)=><Service key={idx} service={service}></Service>)
             }
