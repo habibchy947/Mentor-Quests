@@ -1,12 +1,14 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useContext, useEffect, useRef, useState } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { useLoaderData, useParams } from 'react-router-dom';
+import { AuthContext } from '../Components/AuthProvider';
 
 const ServiceDetail = () => {
     const { idx } = useParams()
     const data = useLoaderData()
+    const {user} = useContext(AuthContext)
     const [serviceSingle, setServiceSingle] = useState({})
-    const [feedback,setFeedBack] =useState('')
+    const [feedback, setFeedBack] = useState('')
     const nameRef = useRef()
     useEffect(() => {
         const singleService = [...data].find(service => service.id === parseInt(idx))
@@ -58,11 +60,20 @@ const ServiceDetail = () => {
                 </div>
             </div>
             <div className='md:w-10/12 w-11/12 mx-auto flex flex-col md:flex-row'>
-            <div className='border-red-500 flex flex-1 flex-col join join-vertical'>
-                <textarea  ref={nameRef} className="textarea textarea-bordered md:w-[400px] w-full h-28 join-item" placeholder="Submit your feedback"></textarea>
-                <button onClick={handleFeedChange} className='btn btn-sm bg-cyan-600 text-white w-32 join-item'>Feedback</button>
-            </div>
-            <div className='flex-1'><p>{feedback && feedback}</p></div>
+                <div className='border-red-500 flex flex-1 flex-col join join-vertical'>
+                    <textarea ref={nameRef} className="textarea textarea-bordered md:w-[400px] w-full h-28 join-item" placeholder="Submit your feedback"></textarea>
+                    <button onClick={handleFeedChange} className='btn btn-sm bg-cyan-600 text-white w-32 join-item'>Feedback</button>
+                </div>
+                {/* feedback */}
+                <div className='flex-1 '>
+                    <p className='font-semibold mt-5 md:mt-0 bg-slate-200 badge px-2'>Feedback</p>
+                    {
+                        feedback && <div className='bg-slate-200 h-28 p-3 rounded-lg'>
+                            <p className='font-semibold text-cyan-600 mb-1'>{user && user.displayName}</p>
+                            <p>{feedback}</p>
+                        </div>
+                    }
+                </div>
             </div>
         </div>
     );

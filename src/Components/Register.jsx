@@ -49,6 +49,7 @@ const Register = () => {
         handleGoogleSignIn()
         .then(()=>{
             navigate('/')
+            toast.success('Your are logged in')
         })
     }
     return (

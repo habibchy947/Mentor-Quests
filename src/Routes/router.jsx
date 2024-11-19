@@ -7,6 +7,8 @@ import AuthLayout from "../Layouts/AuthLayout";
 import Login from "../Components/Login";
 import Register from "../Components/Register";
 import PrivateRoute from "./PrivateRoute";
+import AboutUs from "./AboutUs";
+import ForgetPassword from "../Components/ForgetPassword";
 
 const router = createBrowserRouter([
     {
@@ -30,7 +32,7 @@ const router = createBrowserRouter([
             },
             {
                 path:'/about',
-                element: <h2>About</h2>
+                element: <PrivateRoute><AboutUs></AboutUs></PrivateRoute>
             },
             {
                 path:'/authLayout',
@@ -43,6 +45,10 @@ const router = createBrowserRouter([
                     {
                         path:'/authLayout/register',
                         element: <Register></Register>
+                    },
+                    {
+                        path:'/authLayout/forgetPass',
+                        element: <ForgetPassword></ForgetPassword>
                     },
                 ]
             },

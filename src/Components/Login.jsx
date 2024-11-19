@@ -4,32 +4,36 @@ import { FaGoogle } from "react-icons/fa";
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from './AuthProvider';
 import { Helmet } from 'react-helmet-async';
+import toast from 'react-hot-toast';
 const Login = () => {
-    const {handleGoogleSignIn,handleManualSignIn,setUser,setLoading} = useContext(AuthContext)
+    const { handleGoogleSignIn, handleManualSignIn, setUser, setLoading } = useContext(AuthContext)
     const location = useLocation()
     const navigate = useNavigate()
     console.log(location)
-    const handleLogin = (e) =>{
+    const handleLogin = (e) => {
         e.preventDefault()
         const email = e.target.email.value;
         const password = e.target.password.value;
-        console.log(email,password)
-        handleManualSignIn(email,password)
-        .then(result => {
-            setUser(result.user)
-            e.target.reset()
-            navigate(`${location?.state? location.state : '/'}`)
-        })
-        .catch(err => {
-            console.log(err)
-        })
+        console.log(email, password)
+        handleManualSignIn(email, password)
+            .then(result => {
+                setUser(result.user)
+                e.target.reset()
+                navigate(`${location?.state ? location.state : '/'}`)
+                toast.success('you are logged in')
+            })
+            .catch(err => {
+                console.log(err)
+                toast.error('your password or email is not valid ')
+            })
     }
     const handleGoogleLogin = (e) => {
         e.preventDefault()
         handleGoogleSignIn()
-        .then(()=> {
-            navigate(`${location?.state? location.state : '/'}`)
-        })
+            .then(() => {
+                navigate(`${location?.state ? location.state : '/'}`)
+                toast.success('you are logged in')
+            })
 
     }
     return (
@@ -80,6 +84,9 @@ const Login = () => {
                                     clipRule="evenodd" />
                             </svg>
                             <input name='password' type="password" className="grow" required placeholder='Enter Password' />
+                        </label>
+                        <label className="label">
+                            <Link to='/authLayout/forgetPass' className="label-text-alt font-semibold hover:text-cyan-600 link link-hover">Forgot password?</Link>
                         </label>
                         <button className='btn bg-cyan-600 w-full text-white'>Login</button>
                     </form>
