@@ -1,4 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
+import { Helmet } from 'react-helmet-async';
 import { useLoaderData, useParams } from 'react-router-dom';
 
 const ServiceDetail = () => {
@@ -17,6 +18,9 @@ const ServiceDetail = () => {
     const { image, serviceName, category, description, pricing, duration, counselor, rating } = serviceSingle
     return (
         <div className='mb-2'>
+            <Helmet>
+                <title>Mentor Quest | Service Details</title>
+            </Helmet>
             <div className='bg-serviceBanner bg-[#5f5959cc] bg-blend-overlay bg-no-repeat bg-cover bg-center'>
                 <div className='w-11/12 mx-auto flex flex-col text-white justify-center items-center py-20 space-y-4'>
                     <h2 className='text-5xl font-semibold '>Service Details</h2>

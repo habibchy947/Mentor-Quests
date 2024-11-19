@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { Link, NavLink } from 'react-router-dom';
+import { AuthContext } from './AuthProvider';
 const Navbar = () => {
     const links =
         <>
@@ -8,7 +9,8 @@ const Navbar = () => {
             <NavLink to='/about' className={({isActive})=>` px-4 py-2 font-medium ${isActive? 'text-orange-400':'text-black'}`}>About us</NavLink>
         </>
         const [toggle,setToggle] = useState(false)
-        console.log(toggle)
+        const {user,handleSignOut} = useContext(AuthContext)
+        console.log(user)
     return (
         <div className="navbar px-0  w-11/12 mx-auto py-3">
             <div className="navbar-start">
@@ -40,8 +42,16 @@ const Navbar = () => {
                     {links}
                 </ul>
             </div>
-            <div className="navbar-end">
-                <Link to='/authLayout/login' className="btn px-5 border-none bg-orange-400 text-white">Login</Link>
+            <div className="navbar-end gap-2">
+                {
+                    user && user?.email  ? <div className='tooltip rounded-full tooltip-bottom tooltip-accent' data-tip={user?.displayName}><img  className={`${!user.photoURL ? 'hidden' :'h-14 w-14 object-cover rounded-full'}`} src={user?.photoURL} alt="" /> </div>:""
+                }
+                {
+                    user 
+                    ? <button onClick={handleSignOut} className='text-white btn-neutral btn'>LogOut</button>
+                    :
+                    <Link to='/authLayout/login' className="btn px-5 border-none bg-orange-400 text-white">Login</Link>
+                }
             </div>
         </div>
     );

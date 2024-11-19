@@ -6,6 +6,7 @@ import ServiceDetail from "../Pages/ServiceDetail";
 import AuthLayout from "../Layouts/AuthLayout";
 import Login from "../Components/Login";
 import Register from "../Components/Register";
+import PrivateRoute from "./PrivateRoute";
 
 const router = createBrowserRouter([
     {
@@ -20,7 +21,7 @@ const router = createBrowserRouter([
             },
             {
                 path: '/details/:idx',
-                element:<ServiceDetail></ServiceDetail>,
+                element:<PrivateRoute><ServiceDetail></ServiceDetail></PrivateRoute>,
                 loader:()=> fetch('/services.json')
             },
             {

@@ -3,7 +3,6 @@ import { IoIosTime } from "react-icons/io";
 import { Link } from 'react-router-dom';
 const Service = ({ service }) => {
     const { image, serviceName,id, category, pricing, duration, counselor, rating } = service
-    console.log(service)
     return (
         <div className="card relative bg-white rounded-xl shadow-md outline-2 border-2  border-cyan-100 hover:border-none">
             <figure className="px-3 pt-3">
