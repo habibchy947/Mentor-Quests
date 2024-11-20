@@ -6,7 +6,7 @@ import { AuthContext } from '../Components/AuthProvider';
 const ServiceDetail = () => {
     const { idx } = useParams()
     const data = useLoaderData()
-    const {user} = useContext(AuthContext)
+    const {user,handleBooking} = useContext(AuthContext)
     const [serviceSingle, setServiceSingle] = useState({})
     const [feedback, setFeedBack] = useState('')
     const nameRef = useRef()
@@ -54,6 +54,7 @@ const ServiceDetail = () => {
                     <p><span className='font-semibold'>Counselor : </span><span>{counselor}</span></p>
                     <p className='font-semibold'>More about this course : </p>
                     <p>{description}</p>
+                    <button onClick={()=>handleBooking(serviceSingle)} className='btn bg-cyan-600 text-white'>Book Now</button>
                 </div>
                 <div className='flex-1 lg:p-10 md:p-5 p-3'>
                     <img className='rounded-md h-full' src={image} alt="" />

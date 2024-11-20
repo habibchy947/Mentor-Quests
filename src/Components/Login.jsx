@@ -6,15 +6,13 @@ import { AuthContext } from './AuthProvider';
 import { Helmet } from 'react-helmet-async';
 import toast from 'react-hot-toast';
 const Login = () => {
-    const { handleGoogleSignIn, handleManualSignIn, setUser, setLoading } = useContext(AuthContext)
+    const { handleGoogleSignIn, handleManualSignIn, setUser, forgetEmail,setForgetEmail } = useContext(AuthContext)
     const location = useLocation()
     const navigate = useNavigate()
-    console.log(location)
     const handleLogin = (e) => {
         e.preventDefault()
         const email = e.target.email.value;
         const password = e.target.password.value;
-        console.log(email, password)
         handleManualSignIn(email, password)
             .then(result => {
                 setUser(result.user)
@@ -23,7 +21,6 @@ const Login = () => {
                 toast.success('you are logged in')
             })
             .catch(err => {
-                console.log(err)
                 toast.error('your password or email is not valid ')
             })
     }
@@ -35,6 +32,10 @@ const Login = () => {
                 toast.success('you are logged in')
             })
 
+    }
+    const handleEmail = (e)=>{
+        const emailForget = e.target.value
+        setForgetEmail(emailForget)
     }
     return (
         <div className='flex flex-col md:flex-row lg:w-2/3 md:w-10/12  mx-auto'>
@@ -69,7 +70,7 @@ const Login = () => {
                                 <path
                                     d="M15 6.954 8.978 9.86a2.25 2.25 0 0 1-1.956 0L1 6.954V11.5A1.5 1.5 0 0 0 2.5 13h11a1.5 1.5 0 0 0 1.5-1.5V6.954Z" />
                             </svg>
-                            <input name='email' type="email" className="grow " required placeholder="Enter Email" />
+                            <input onChange={handleEmail} name='email' type="email" className="grow " required placeholder="Enter Email" />
                         </label>
                         {/* password field */}
                         <label className="input input-bordered flex items-center gap-2">

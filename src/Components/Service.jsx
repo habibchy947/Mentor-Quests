@@ -33,7 +33,7 @@ const Service = ({ service }) => {
                 <h2 className="card-title text-2xl font-medium text-black">{serviceName}</h2>
                 <p><span className='font-semibold'>Counselor :</span> {counselor}</p>
                 <div className="card-actions flex justify-between items-center">
-                   <Link to={`details/${id}`}><button className="btn btn-outline outline-zinc-500 bg-cyan-600 text-white rounded-lg">Learn More</button></Link> 
+                   <Link to={`details/${id}`}><button className="btn btn-outline outline-zinc-500 bg-cyan-600 text-white rounded-lg">Learn More</button></Link>
                 </div>
             </div>
             <div className='h-20 -top-8 md:-right-5 -right-1 w-20 text-xl font-bold absolute text-white rounded-full text-center bg-orange-400 flex items-center justify-center'>{pricing}</div>

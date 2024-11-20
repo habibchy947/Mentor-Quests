@@ -7,9 +7,9 @@ import AuthLayout from "../Layouts/AuthLayout";
 import Login from "../Components/Login";
 import Register from "../Components/Register";
 import PrivateRoute from "./PrivateRoute";
-import AboutUs from "./AboutUs";
 import ForgetPassword from "../Components/ForgetPassword";
 import MyProfile from "../Pages/MyProfile";
+import Dashboard from "../Pages/Dashboard";
 
 const router = createBrowserRouter([
     {
@@ -32,8 +32,8 @@ const router = createBrowserRouter([
                 element: <PrivateRoute><MyProfile></MyProfile></PrivateRoute>
             },
             {
-                path:'/about',
-                element: <PrivateRoute><AboutUs></AboutUs></PrivateRoute>
+                path:'/dashBoard',
+                element: <PrivateRoute><Dashboard/></PrivateRoute>
             },
             {
                 path:'/authLayout',

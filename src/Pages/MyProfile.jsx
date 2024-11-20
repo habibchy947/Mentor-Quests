@@ -27,19 +27,19 @@ const MyProfile = () => {
         <div className='md:w-5/12 w-10/12 py-5 rounded-lg mx-auto '>
            <div className='bg-white shadow-lg rounded-xl'>
            <div className='flex relative mb-14 md:mb-20 justify-center rounded-t-lg py-14 md:py-20 bg-cyan-500 items-center'>
-                <div className='absolute top-10  rounded-full'>
+                <div data-tip={user?.displayName} className='absolute tooltip tooltip-right tooltip-accent top-10 rounded-full'>
                     {
                         user.photoURL
                             ?
-                            <img className='md:h-52 h-32 w-32 md:w-52 rounded-full object-cover' src={user?.photoURL} alt="" />
-                            : ''
+                            <img  className='md:h-52  h-32 text-center w-32 md:w-52 rounded-full object-cover' src={user?.photoURL} alt={user?.displayName} />
+                            : <IoPersonCircleOutline/>
                     }
                 </div>
             </div>
             <div className='p-4 space-y-3'>
                 <h2><span className='text-lg font-semibold'>Profile Name : </span><span>{user?.displayName}</span></h2>
                 <h2><span className='text-lg font-semibold'>Email : </span><span>{user?.email}</span></h2>
-                <h2><span className='text-lg font-semibold'>Photo URL : </span><span>{user?.photoURL}</span></h2>
+                <h2 className='overflow-scroll'><span className='text-lg font-semibold'>Photo URL : </span><span>{user?.photoURL}</span></h2>
                 <p className='text-xl font-semibold text-cyan-600 pt-5'>Update Profile</p>
                 <div className="divider"></div>
             </div>

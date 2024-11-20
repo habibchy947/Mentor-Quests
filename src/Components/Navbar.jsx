@@ -7,11 +7,10 @@ const Navbar = () => {
         <>
             <NavLink to='/' className={({isActive})=> ` px-4 py-2 font-medium ${isActive? 'text-orange-400':'text-black'}`}>Home</NavLink>
             <NavLink to='/profile' className={({isActive})=>` px-4 py-2 font-medium ${isActive? 'text-orange-400':'text-black'}`}>My profile</NavLink>
-            <NavLink to='/about' className={({isActive})=>` px-4 py-2 font-medium ${isActive? 'text-orange-400':'text-black'}`}>About us</NavLink>
+            <NavLink to='/dashBoard' className={({isActive})=>` px-4 py-2 font-medium ${isActive? 'text-orange-400':'text-black'}`}>Dashboard</NavLink>
         </>
         const [toggle,setToggle] = useState(false)
         const {user,handleSignOut} = useContext(AuthContext)
-        console.log(user)
     return (
         <div className="navbar px-0  w-11/12 mx-auto py-3">
             <div className="navbar-start">
@@ -44,6 +43,9 @@ const Navbar = () => {
                 </ul>
             </div>
             <div className="navbar-end gap-2">
+                {
+                    !user ? <span className='text-5xl'><IoPersonCircleOutline/></span>:''
+                }
                 {
                     user && user?.photoURL ? <div className='tooltip  tooltip-bottom tooltip-accent' data-tip={user?.displayName}>{user?.photoURL ? <img  className={`${!user?.photoURL ? 'hidden' :'h-14 w-14 object-cover rounded-full'}`} src={user?.photoURL} alt={user?.displayName}/>:<p className='h-14 w-14 rounded-full'><IoPersonCircleOutline/></p>} </div>:""
                 }

@@ -17,17 +17,15 @@ const Register = () => {
         const email = e.target.email.value;
         const photo = e.target.photo.value;
         const password = e.target.password.value;
-        console.log(name,email,password)
         if(!/^(?=.*[a-z])(?=.*[A-Z]).{6,}$/.test(password)){
             toast.error('Password should be at least 6 character with one upperCase and one lowerCase letter')
             return
-        }else{
-            toast.success('Your account has been created')
         }
         handleSignUp(email,password)
         .then(result =>{
             setUser(result.user)
             e.target.reset()
+            toast.success('Your account has been created')
             updateUserProfile({
                 displayName:name,
                 photoURL:photo
@@ -36,11 +34,10 @@ const Register = () => {
                 navigate('/')
             })
             .catch(err => {
-                console.log(err)
+                toast.error(err)
             })
         })
-        .catch(err =>{
-            console.log(err)
+        .catch(() =>{
             toast.error('your password or email is not valid')
         })
     }
