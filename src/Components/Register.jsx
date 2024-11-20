@@ -75,7 +75,7 @@ const Register = () => {
                     <form onSubmit={handleRegister} className='space-y-4 py-3' action="">
                         {/* name field */}
                         <label className="input  input-bordered flex items-center gap-2">
-                            <input name='name' type="text" className="grow "  placeholder="Enter Your Name" />
+                            <input name='name' type="text" className="grow " required  placeholder="Enter Your Name" />
                         </label>
                         {/* email field */}
                         <label className="input  input-bordered flex items-center gap-2">
@@ -94,7 +94,7 @@ const Register = () => {
                         {/* photoURL field */}
                         <label className="input  input-bordered flex items-center gap-2">
                             <span><FaPhotoFilm/></span>
-                            <input name='photo' type="text" className="grow "  placeholder="Enter Photo URL" />
+                            <input name='photo' type="text" className="grow " required  placeholder="Enter Photo URL" />
                         </label>
                         {/* password field */}
                         <label className="input input-bordered flex items-center gap-2">

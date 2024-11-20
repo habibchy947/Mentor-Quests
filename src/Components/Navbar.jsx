@@ -1,6 +1,7 @@
 import React, { useContext, useState } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import { AuthContext } from './AuthProvider';
+import { IoPersonCircleOutline } from "react-icons/io5";
 const Navbar = () => {
     const links =
         <>
@@ -44,7 +45,7 @@ const Navbar = () => {
             </div>
             <div className="navbar-end gap-2">
                 {
-                    user && user?.email  ? <div className='tooltip rounded-full tooltip-bottom tooltip-accent' data-tip={user?.displayName}><img  className={`${!user.photoURL ? 'hidden' :'h-14 w-14 object-cover rounded-full'}`} src={user?.photoURL} alt="" /> </div>:""
+                    user && user?.photoURL ? <div className='tooltip  tooltip-bottom tooltip-accent' data-tip={user?.displayName}>{user?.photoURL ? <img  className={`${!user?.photoURL ? 'hidden' :'h-14 w-14 object-cover rounded-full'}`} src={user?.photoURL} alt={user?.displayName}/>:<p className='h-14 w-14 rounded-full'><IoPersonCircleOutline/></p>} </div>:""
                 }
                 {
                     user 

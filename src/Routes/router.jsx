@@ -9,6 +9,7 @@ import Register from "../Components/Register";
 import PrivateRoute from "./PrivateRoute";
 import AboutUs from "./AboutUs";
 import ForgetPassword from "../Components/ForgetPassword";
+import MyProfile from "../Pages/MyProfile";
 
 const router = createBrowserRouter([
     {
@@ -28,7 +29,7 @@ const router = createBrowserRouter([
             },
             {
                 path:'/profile',
-                element: <h2>Profile</h2>
+                element: <PrivateRoute><MyProfile></MyProfile></PrivateRoute>
             },
             {
                 path:'/about',
