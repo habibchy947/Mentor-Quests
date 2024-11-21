@@ -43,6 +43,7 @@ const AuthProvider = ({ children }) => {
        }else{
         const newBookedService = [...selectedServices,single]
         setSelectedServices(newBookedService)
+        toast.success('this course is booked, check dashboard')
        }
     }
     const handleCancel = (id) =>{

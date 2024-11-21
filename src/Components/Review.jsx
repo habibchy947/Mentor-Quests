@@ -3,7 +3,7 @@ import { FaQuoteLeft } from "react-icons/fa";
 const Review = ({singleReview}) => {
     const {name,review,image} = singleReview
     return (
-        <div className="flex rounded-lg  flex-col h-[500px] md:h-full  md:flex-row bg-base-100 shadow-lg">
+        <div className="flex rounded-lg  flex-col h-[400px] md:h-full  md:flex-row bg-base-100 shadow-lg">
         <figure className='md:w-[40%] rounded-lg'>
           <img
           className='h-60 object-cover rounded-lg w-full'
