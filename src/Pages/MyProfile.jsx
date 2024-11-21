@@ -3,6 +3,7 @@ import { AuthContext } from '../Components/AuthProvider';
 import { IoPersonCircleOutline } from "react-icons/io5";
 import { FaPhotoFilm } from 'react-icons/fa6';
 import toast from 'react-hot-toast';
+import { Helmet } from 'react-helmet-async';
 const MyProfile = () => {
     const { user,setUser ,updateUserProfile} = useContext(AuthContext)
     const handleUpdate = (e) => {
@@ -25,6 +26,9 @@ const MyProfile = () => {
     }
     return (
         <div className='md:w-5/12 w-10/12 py-5 rounded-lg mx-auto '>
+            <Helmet>
+                <title>Mentor Quest | My Profile</title>
+            </Helmet>
            <div className='bg-white shadow-lg rounded-xl'>
            <div className='flex relative mb-14 md:mb-20 justify-center rounded-t-lg py-14 md:py-20 bg-cyan-500 items-center'>
                 <div data-tip={user?.displayName} className='absolute tooltip tooltip-right tooltip-accent top-10 rounded-full'>

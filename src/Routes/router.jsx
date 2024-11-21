@@ -33,7 +33,8 @@ const router = createBrowserRouter([
             },
             {
                 path:'/dashBoard',
-                element: <PrivateRoute><Dashboard/></PrivateRoute>
+                element: <PrivateRoute><Dashboard/></PrivateRoute>,
+                loader:()=>fetch('/mentors.json')
             },
             {
                 path:'/authLayout',

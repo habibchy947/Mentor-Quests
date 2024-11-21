@@ -1,0 +1,24 @@
+[
+    {
+      "image": "https://i.ibb.co.com/tHf44QW/mentor-1.webp",
+      "duration": "60 minutes",
+      "topic": "Career Planning",
+      "goal": "Identify clear career goals and pathways",
+      "counselor": "John Smith"
+    },
+    {
+      "image": "https://i.ibb.co.com/hyf72dC/mentor-2.jpg",
+      "duration": "50 minutes",
+      "topic": "Skills Assessment",
+      "goal": "Discover strengths and areas for growth",
+      "counselor": "Emily Davis"
+    },
+    {
+      "image": "https://i.ibb.co.com/hf3dgRX/mentor-3.jpg",
+      "duration": "45 minutes",
+      "topic": "Job Interview Preparation",
+      "goal": "Build confidence and master interview techniques",
+      "counselor": "Michael Brown"
+    }
+  ]
+  
