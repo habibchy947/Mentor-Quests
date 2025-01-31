@@ -112,6 +112,6 @@ Start the server
 
 
 ## 📋 Relevant Links
-- **Github repo**  [https://github.com/habibchy947/Mentor-Quest.git](https://github.com/habibchy947/Mentor-Quest.git)
+- **Github repo**  [https://github.com/habibchy947/Mentor-Quests](https://github.com/habibchy947/Mentor-Quests)
 
 
